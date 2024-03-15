@@ -1,0 +1,242 @@
+    .skills {
+        min-height: 100vh;
+
+        .skills-container {
+            // grid-template-columns: 450px; for single card
+            grid-template-columns: 450px 450px; // for at least 2 cards
+            column-gap: 3rem;
+            justify-content: center;
+
+            .skills-content {
+                background-color: #fff;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                padding: 2.5rem;
+                border-radius: 1.25rem;
+                box-shadow: var(--card-shadow);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                // justify-content: space-between;
+                gap: 2rem;
+                transition: all .5s ease;
+
+                .skills-title {
+                    text-align: center;
+                    font-size: var(--normal-font);
+                    font-weight: var(--font-medium);
+                    margin-bottom: 1.5rem;
+
+                    span {
+                        color: var(--text-color);
+                        font-size: var(--small-font);
+                        font-weight: 300;
+                    }
+                }
+
+                .skills-box {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    column-gap: 3rem;
+
+
+                    .skills-group {
+                        display: grid;
+                        align-items: flex-start;
+                        row-gap: 1.15rem;
+
+                        .skills-data {
+                            display: flex;
+                            column-gap: .5rem;
+
+                            .bx-badge-check {
+                                font-size: 1rem;
+                                color: var(--title-color);
+                            }
+
+                            .skills-name {
+                                font-size: var(--normal-font);
+                                font-weight: var(--font-medium);
+                                line-height: 18px;
+                            }
+                        }
+                    }
+                }
+
+                .services-button {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-top: 2rem;
+                    color: var(--title-color);
+                    font-size: var(--small-font);
+                    display: inline-flex;
+                    align-items: center;
+                    cursor: pointer;
+                    column-gap: .25rem;
+
+                    &-icon {
+                        font-size: 1rem;
+                        transition: .3s;
+                    }
+
+                    &:hover .services-button-icon {
+                        transform: translateX(.25rem);
+                    }
+                }
+
+                .services-modal {
+                    position: fixed;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    z-index: 1000;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0 1rem;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: .4s;
+
+                    // Show Modal
+                    &.active-modal {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+
+                    &-content {
+                        width: 600px;
+                        position: relative;
+                        background-color: #fff;
+                        padding: 4rem 3rem 2.5rem;
+                        border-radius: 1.5rem;
+
+                        .services-modal-close {
+                            position: absolute;
+                            top: 1.5rem;
+                            right: 1.5rem;
+                            font-size: 1.5rem;
+                            cursor: pointer;
+                            color: var(--title-color);
+                            transition: all .25s ease;
+
+                            &:hover {
+                                color: #ff8886;
+                            }
+                        }
+
+                        .services-modal-title {
+                            text-align: center;
+                            font-size: var(--h3-font);
+                            font-weight: var(--font-medium);
+                            margin-bottom: 1rem;
+                        }
+
+                        .services-modal-description {
+                            font-size: var(--small-font);
+                            text-align: justify;
+                            text-indent: 20px;
+
+                            &.mb {
+                                margin-bottom: 2rem;
+                            }
+
+                            .agency-link {
+                                color: #3d3d3d;
+                                font-weight: bolder;
+                            }
+                        }
+
+                        .services-modal-services {
+                            row-gap: .75rem;
+
+                            .services-modal-service {
+                                display: flex;
+                                align-items: center;
+                                column-gap: .5rem;
+
+                                .services-modal-icon {
+                                    font-size: 1.1rem;
+                                    color: var(--title-color);
+                                }
+
+                                .services-modal-info {
+                                    font-size: var(--small-font);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Responsive 
+    @media screen and (max-width: 992px) {
+        .skills {
+            .skills-container {
+                grid-template-columns: max-content;
+                row-gap: 2rem;
+
+                .services-icon {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        .skills {
+            .skills-container {
+                grid-template-columns: 1fr;
+
+                .skills-content {
+                    padding: 1rem;
+
+                    &:hover {
+                        transform: none;
+                    }
+
+                    .skills-box {
+                        column-gap: 1rem;
+                    }
+
+                    .services-modal {
+                        .services-modal-content {
+                            padding: 3rem 1.5rem 2.5rem;
+
+                            .services-modal-description {
+                                padding: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 350px) {
+        .skills {
+            .skills-container {
+                row-gap: 1.25rem;
+
+                .skills-content {
+                    .skills-box {
+                        column-gap: 1.25rem;
+
+                        .skills-group {
+                            .skills-data {
+                                .skills-name {
+                                    font-size: var(--small-font);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }

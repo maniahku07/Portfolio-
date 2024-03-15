@@ -1,0 +1,164 @@
+.projects {
+    .projects-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .button-more {
+            margin-top: 1rem;
+            display: flex;
+            gap: 5px;
+
+            i {
+                transform: rotate(90deg);
+                transition: all .5s ease-in-out;
+
+                &.up {
+                    transform: rotate(270deg);
+                }
+            }
+        }
+
+        .projects-more {
+            width: 100%;
+            text-align: center;
+            opacity: .35;
+            font-weight: var(--small-font);
+            transition: all .5s ease;
+            color: var(--text-color);
+            cursor: pointer;
+
+            a {
+                color: black;
+                font-weight: var(--medium-font);
+            }
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        .project-content {
+            justify-content: center;
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: 325px 325px 325px;
+
+            .project-box {
+                background-color: #fff;
+                padding: .75rem;
+                border-radius: .75rem;
+                box-shadow: var(--card-shadow);
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+                transition: all .5s ease;
+
+                .project-image {
+                    img {
+                        border-radius: .4rem .4rem .125rem .125rem;
+                        aspect-ratio: 16/9;
+                        width: 100%;
+                        opacity: .75;
+                        transition: all .5s ease;
+                    }
+                }
+
+                &:hover {
+                    transform: scale(1.035);
+
+                    img {
+                        opacity: 1;
+                    }
+                }
+
+                h3 {
+                    font-size: 1.1rem;
+                    font-weight: var(--font-medium);
+                }
+
+                .project-buttons {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+
+                    .project-button {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-top: .75rem;
+                        color: var(--title-color);
+                        font-size: var(--medium-font);
+                        display: inline-flex;
+                        align-items: center;
+                        cursor: pointer;
+                        column-gap: .25rem;
+
+                        &-icon {
+                            font-size: 1.25rem;
+                            transition: .3s;
+                        }
+
+                        &:hover .project-button-icon {
+                            transform: translateX(.4rem);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Responsive 
+@media screen and (max-width: 1075px) {
+    .projects {
+        .projects-container {
+            .project-content {
+                gap: 3rem;
+                grid-template-columns: 325px 325px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .projects {
+        .projects-container {
+            .project-content {
+                gap: 2rem;
+                grid-template-columns: 350px;
+
+                .project-box {
+                    &:hover {
+                        transform: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .projects {
+        .projects-container {
+            .project-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .projects {
+        .projects-container {
+            .project-content {
+                .project-box {
+                    gap: 1.25rem;
+                }
+            }
+        }
+    }
+}

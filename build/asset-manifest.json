@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.af5505d4.css",
+    "main.js": "/static/js/main.47ee5370.js",
+    "static/media/me.jpeg": "/static/media/me.1cc6b8a5b0c28e8b7972.jpeg",
+    "static/media/modern-to-do.webp": "/static/media/modern-to-do.e5e373f80efab5f89594.webp",
+    "index.html": "/index.html",
+    "main.af5505d4.css.map": "/static/css/main.af5505d4.css.map",
+    "main.47ee5370.js.map": "/static/js/main.47ee5370.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.af5505d4.css",
+    "static/js/main.47ee5370.js"
+  ]
+}
